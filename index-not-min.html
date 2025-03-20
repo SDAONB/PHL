@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<!--html style= "overflow-x: initial;"-->
+<html>
+    <head>
+        <title>Peter Longley</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--link rel="stylesheet" type="text/css" href="css/style.css"-->
+        <link rel="stylesheet" type=text/css href="phl-pure-css-190125.css">
+        <!--link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"-->
+        <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville" /-->
+        <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville&subset=latin&display=swap" /-->
+        <!--base href="http://localhost/"-->
+        
+        <style>
+        /* *** Self-hosted font, Libre-Baskerville regular - Latin glyphs only - woff2 format only *** */
+
+        @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Libre Baskerville';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./fonts/libre-baskerville-v14-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+        }
+        </style>
+
+        <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                font-family: "Libre Baskerville", serif;
+            }
+            .w3-bar-block .w3-bar-item {
+                padding: 20px 75px;
+            }
+        </style>
+
+        <!-- Flexbox Styles for Top Nav -->
+        <style>
+            .flex-container {
+                display: flex;
+                //height: auto;
+                //justify-content: space-between;
+                //background-color: lightgrey;
+                box-sizing: border-box;
+                //position: sticky;
+                margin: 0;
+            }
+
+            .flex-container > div {
+                //display: flex;
+                //align-content: flex-start;
+                //background-color: coral;
+                width: auto;
+                //height: auto;
+                margin: 0;
+                text-align: center;
+                //line-height: 150px;
+                //font-size: 60px;
+                //align-items: top;
+                padding-bottom: 30px;
+                padding-top: 30px;
+            }
+        </style>
+        <!-- END OF Flexbox Styles for Top Nav -->
+    </head>
+    
+
+    <body>
+        <!-- Sidebar (hidden by default) -->
+        <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display: none; z-index: 10; width: 40%; min-width: 30rem; background-color: #8f094e; color: #fff;" id="mySidebar">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-close-x">&times;</a>
+            <a href="#books" onclick="w3_close()" class="scroll-link w3-bar-item w3-button"data-element-id="books">My Books</a>
+            <a href="#about" onclick="w3_close()" class="scroll-link w3-bar-item w3-button" data-element-id="about">About Me</a>
+        </nav>
+
+        <!-- Alt Top menu -->
+        <div data-div-level="1" class="w3-top">
+            <div data-div-level="2" class="w3-white w3-large" style="width: 100vw; margin: auto; vertical-align: top; background-color: white; z-index: 5;">
+                <div data-div-level="3" style="width: 100vw; top: 0; left: 0; right: 0; position: fixed; margin: auto; display: inline-block;">
+                    <div data-div-level="4" class="flex-container">
+                        
+                      <!-- HAMBURGER -->
+                        <!--div style="background-color: rgba(255, 255, 255, 1);font-size: 2rem; flex:20%; box-sizing: border-box; text-align: left; padding-bottom: 5px"-->
+                        <div data-div-level="5" style="background-color: rgb(255, 255, 255); font-size: 5px; flex: 20%; box-sizing: border-box; text-align: middle; padding-bottom: 5px;">
+                            <div data-div-level="6" onclick="w3_open()" style="margin: 0 auto; display: inline-block;">
+                                <style>
+                                    .hamburger {
+                                        font-family: "Libre Baskerville", serif;
+                                        font-size: 0.3rem;
+                                        width: 1.8rem;
+                                        height: 0.3rem;
+                                        background-color: black;
+                                        margin-top: 0.42rem;
+                                        padding: 0px;
+                                    }
+                                </style>
+
+                                <div class="hamburger"></div>
+                                <div class="hamburger"></div>
+                                <div class="hamburger"></div>
+                            </div><!-- div level now = 5-->                            
+                        </div><!-- div level now = 4--> 
+                        <!-- END OF HAMBURGER  -->
+
+                        <div style="background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)); font-size: 4rem; text-align: center;  flex: 60%; ">Peter Longley</div>                        
+                        <div style="background-color: rgba(255, 255, 255, 1); font-size: 2.2rem; flex: 20%; box-sizing: border-box; text-align: center; padding-bottom: 0.3rem;">
+                            <!--span id="obf">Email</span-->
+                            <div id = "zzz" style="display: inline-block; height: 30px; width: 30px; margin-top: 0.42rem;"></div>
+                        </div>
+                    </div><!-- div level now = 3-->
+
+                    <div class="flex-container">
+                        <div style="background-color: rgba(255, 255, 255, 1); font-size: 30px; flex: 0%; text-align: left; padding-bottom: 5px; display: none;">Left</div>
+                        <div style="background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1)); font-size: 40px; text-align: center; padding-top: 10px; flex: 100%; display:none;">Peter Longley</div>                        
+                        <div style="background-color: rgba(255, 255, 255, 1); font-size: 30px; flex: 0%; box-sizing: border-box; text-align: right; display: none;">Right</div>
+                    </div>
+                </div><!-- div level now = 2-->
+                <!--div style="height: 400px"></div-->
+            </div><!-- div level now = 1-->
+        </div><!-- div level now = 0-->
+
+        <!--div class="w3-center w3-xlarge w3-padding-16">My Books</div-->
+
+        <div id="books"></div>
+
+        <!-- !PAGE CONTENT! -->
+        <div data-div-level="1" class="w3-main w3-content w3-padding" style="max-width: 130rem; margin-top: 10rem;">
+            <div class="w3-center w3-xxlarge w3-padding-16">My Books</div>
+            <!-- First Photo Grid-->
+            <div data-div-level="2" class="w3-row-padding w3-padding-16 w3-center">
+                <div data-div-level="3" class="w3-quarter">
+                    <!--a href="#fishers" class="scroll-link" data-element-id="fishers"><img class="book" src="./images/Webp-200s/PreA-fishers-front-400x600.webp" alt="Fishers of Men" style="width: 100%;"></a-->
+                    <a href="#fishers" ><img class="book scroll-link" data-element-id="fishers"class="book" src="./images/Webp-200s/PreA-fishers-front-400x600.webp" alt="Fishers of Men" style="width: 100%;"/></a>
+                    <h3>Fishers of Men</h3>
+                    <p>Book II of the Flavian Trilogy</p>
+                </div><!-- div level now = 2-->
+                <div class="w3-quarter">
+                    <a href="#destiny" ><img class="book scroll-link" data-element-id="destiny" src="./images/Webp-200s/A-Destiny-400x600.webp" alt="Destiny" style="width: 100%;" loading="lazy" /></a>
+                    <h3>Star of Destiny</h3>
+                    <p>Book I of the Flavian Trilogy</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/When-Cows-Come-Peter-Longley-ebook/dp/B0D7FDF1HX" ><img class="book" src="./images/Webp-200s/B-Cows240W.webp" alt="Cows" style="width: 100%;" loading="lazy"/></a>
+                    <h3>When the Cows Come Home</h3>
+                    <p>The lives of five Bavarian families unfold</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Cedars-Beckenham-Peter-Longley-ebook/dp/B0C3N7HHPQ" ><img class="book" src="./images/Webp-200s/C-Cedars200W.webp" alt="Cedars" style="width: 100%;" loading="lazy"/></a>
+                    <h3>The Cedars of Beckenham</h3>
+                    <p>The mystery of an antique German doll</p>
+                    <!--p>What else?</p-->
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Twenty-Five-Years-before-Peter-Longley-ebook/dp/B08NFL4RJB" ><img class="book" src="./images/Webp-200s/D-Twenty-Five200W.webp" alt="Twenty-five" style="width: 100%;" loading="lazy" /></a>
+                    <h3>Twenty-five Years before the Mast</h3>
+                    <p>A cruise director looks back over a career</p>
+                </div>
+
+                
+            </div><!-- div level now = 1-->
+
+            <!-- Second Photo Grid-->
+            <div data-div-level="2" class="w3-row-padding w3-padding-16 w3-center">
+
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Orbit-Life-My-People/dp/1491763051" ><img class="book" src="./images/Webp-200s/E-Orbit200W.webp" style="width: 100%; border: 1px solid darkgray;" loading="lazy"/></a>
+                    <h3>Orbit</h3>
+                    <p>Orbit is not just a dog; he's a spiritual being....</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Forsythia-Generations-Peter-Hovenden-Longley/dp/1475933525" ><img class="book" src="./images/Webp-200s/F-Forsythia200W.webp" alt="Forsythia" style="width: 100%;" loading="lazy"/></a>
+                    <h3>Forsythia</h3>
+                    <p>A memoir of lost generations</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Mist-God-Three-Magdala-Trilogy-ebook/dp/B07934T8Z3" ><img class="book" src="./images/Webp-200s/G-Mist200W.webp" alt="The Mist of God" style="width: 100%;" loading="lazy"/></a>
+                    <h3>The Mist of God</h3>
+                    <p>Volume Three of the Magdala Trilogy</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Beyond-Olive-Grove-Depicting-Plausible/dp/1440178925" ><img class="book" src="./images/Webp-200s/H-Olive200W.webp" alt="Beyond the Olive Grove"style="width: 100%;" loading="lazy"/></a>
+                    <h3>Beyond the Olive Grove</h3>
+                    <p>Volume Two of The Magdala Trilogy</p>
+                </div>
+                <div class="w3-quarter">
+                    <a href="https://www.amazon.com/Stars-Legacy-Depicting-Plausible-Magdalene/dp/1440142564" ><img class="book" src="./images/Webp-200s/I-Star200W.webp" alt="Star's Legacy" style="width: 100%;" loading="lazy"/></a>
+                    <h3>A Star's Legacy</h3>
+                    <p>Volume One of The Magdala Trilogy</p>
+                </div>
+                <!--div class="w3-quarter">
+                    <img class="book" src="./images/Webp-200s/J-Rosemary200W.webp" alt="Croissant" style="width: 100%; border: 1px solid darkgray;" />
+                    <h3>La French II</h3>
+                    <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+                </div-->
+                 <!--div><a href="#fishers" class="scroll-link" data-element-id="fishers">to the fishers</a></div-->
+                 <!--div><a href="#fishers" class="scroll-link" data-element-id="fishers">to the fishers</a></div-->
+            </div><!-- div level now = 1-->
+
+        
+
+            <!-- Pagination -->
+            <!--div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div-->
+
+            
+         <!--div class="spacer-div" style = "height: 5vh;"></div-->
+           
+            <!-- About Section -->
+            
+          
+
+            </div><!-- div level now = 0-->
+
+
+            
+
+
+
+        <div class="spacer-div" style = "height: 30rem;"></div>
+
+            
+            <!--div id="about" data-div-level="1" class="section, book-section-spacer "></div-->
+
+        <section class="section-wrapper">
+
+        <div  id ="about" data-div-level="1" class="section, book-section-spacer "></div>
+
+        <div data-div-level="1">
+            <div data-div-level="2" id="wrapper-auth" class="w3-man w3-content /*w3-padding*/" style="background-color: white; max-width: /*173*/ 220rem; display: flex; justify-content: center; width:95%;  text-align:center; height:auto; overflow: auto">
+
+
+                <div data-div-level="3"  class="flex-author-container" style="display:flex; flex-direction: row; align-content: start; /*background-color:blue;*/ flex-wrap: wrap; height:auto; overflow: auto; justify-content: center; align-items: flex-start; margin: 0 auto; padding-bottom:10px;">
+
+                    <div class="flex-author-item" style="/*background-color:lightcoral*/; display:flex; top: 0; align-self: flex-start; width: 250px; height: auto; padding-bottom: 0px"><img src="./images/Webp-200s/PHL-Image-5x7-Q80.webp" alt="Author"; loading="lazy" class="book" style="width: 250px";>                  
+
+                    </div>
+
+                    <div class="flex-author-item,  flex-author-item-text" style="/*background-color:lightseagreen;*/ padding: 0 0 0 40px; height: auto; min-width: 292px; width: calc(90vw - 292px);">
+ 
+                        
+                        <p style="margin-top: 0; line-height: 150%;">Peter Longley graduated with a master's degree in theology from Cambridge University in 1970. He was a licensed lay-reader and preacher in the Anglican Church both in Ireland and the United States. Brought up in England, Longley lived in Ireland from 1966-1977 where he was the estate manager of Tullamaine Castle. From 1977, he has lived in the United States in Georgia, Minnesota, and Missouri. From 1978-1998 he was a cruise director with Royal Viking Line and Cunard, where for ten years he was on the prestigious ocean liner, Queen Elizabeth 2. He started writing novels in 1989 and has ten published works. After retirement from cruise ships, he worked in horticulture as Horticultural Interpreter at the 114-acre Springfield Botanical Gardens, Missouri. In 2017 he retired and moved back to England.
+                        </p><p>You can email Peter by clicking the 'envelope' symbol in the top bar.
+
+                        
+                        
+                    
+
+                    </div><!-- div level now = 3-->
+
+                </div><!--flex container close--><!-- div level now = 2-->
+
+            </div><!--wrapper close--><!-- div level now = 1-->
+        </div><!--author close--><!-- div level now = 0-->
+
+        </section> <!--End of "section-wrapper"-->
+
+        <div class="spacer-div" style = "height: 500px; position: relative"></div>
+
+
+
+
+
+            
+
+
+
+
+        
+
+            <!-- **** STYLES FOR INDIVIDUAL BOOK FLEXBOX **** -->
+            <style>
+
+                    .flex-book-container, .flex-book-item, .flex-author-container, .flex-author-item {       
+                        margin:0 auto;
+                        padding: 0;
+                        box-sizing: border-box;
+                        flex-wrap: wrap !important;
+                        //align-items: flex-start !important;
+
+                    }
+
+
+                    .book-section-spacer { 
+                        height:12rem;
+                        //background: green;
+
+                    }
+
+                    .flex-book-item-text, .flex-author-item-text{
+
+                                     text-align: left !important;
+                                     columns: 34rem auto;
+                                     //-moz-columns: 35rem auto;
+                                     column-rule: 1px dotted grey;
+                                     //-moz-column-rule: 1px dotted lightgrey;
+                                     column-gap: 3rem;
+                                     //-moz-column-gap: 3rem;
+
+                    }
+
+                    .vendorimg {
+                                    display: flex ;
+                    }
+                    
+
+
+                    @media screen and (min-width: 200px) and (max-width: 450px) {
+                            
+                            .book-section-spacer {
+                                    height: 17rem !important;
+
+                                    }
+                    }
+
+
+
+
+
+
+                    @media screen and (min-width: 300px) and (max-width: 1000px) {
+                            
+                            .book-section-spacer {
+                                    height: 15rem;
+
+                                    }
+
+
+
+                            .flex-book-container, .flex-author-container {
+                                    
+                                    //flex-direction: column;
+                                    align-items: center;
+
+                                    //flex-wrap: wrap !important;
+                                    
+
+                                    }
+                                                        
+
+                            .flex-book-item {
+
+                                     
+                                    min-width: 200px !important; 
+                                    //object-fit: contain !important;
+                                    //or object-fit: cover; 
+                                    width: 200px !important; 
+                                    height: 300px !important;
+                                    /*align-self: flex-start;
+                                    position: sticky;*/
+                                    } 
+
+                            .flex-book-item img {
+
+                                                                     
+                                    width: 200px !important; 
+                                    height: 300px !important;
+
+                                    /*align-self: flex-start;*/
+                                    } 
+
+                    
+                            .flex-book-item-text, .flex-author-item-text {
+
+                                     width: 90vw !important;
+                                     padding: 30px 20px 0 20px !important;
+                                                                         
+                                    
+                                    } 
+
+                            
+                            .flex-author-item {
+
+                                     
+                                    min-width: 250px !important; 
+                                    //object-fit: contain !important;
+                                    //or object-fit: cover; 
+                                    width: 292px !important; 
+                                    height: 350.08px !important;
+                                    /*align-self: flex-start;
+                                    position: sticky;*/
+                                    } 
+
+
+                           
+
+                             .flex-author-item > img {
+
+                                                                     
+                                    width: 292px !important; 
+                                    height: 350.08px !important;
+
+                                    /*align-self: flex-start;*/
+                                    } 
+
+                                        
+                                    
+                                    
+
+                            .vendorimg {
+
+                                    display: none;
+                                    }
+                    }
+
+
+                    @media screen and (min-width: 600px) and (max-width: 1000px) {
+                            
+                            .book-section-spacer {
+                                    height: 11rem !important;
+
+                                    }
+                    }
+
+                    @media screen and (min-width: 1001px)  {
+                            
+                            .vendorimg {
+                                    display: flex;
+
+                                    }
+                    }
+
+
+            </style>
+
+
+        <section class="section-wrapper">
+
+            <div id="fishers" data-div-level="1" class="section, book-section-spacer "></div>
+    
+
+        <div data-div-level="1">
+            <div data-div-level="2" id="wrapper" class="w3-man w3-content /*w3-padding*/" style="background-color: white; max-width: /*173*/ 220rem; display: flex; justify-content: center; width:95%;  text-align:center; height:auto; overflow: auto">
+
+
+                <div data-div-level="3"  class="flex-book-container" style="display:flex; flex-direction: row; align-content: start; /*background-color:blue;*/ flex-wrap: wrap; height:auto; overflow: auto; justify-content: center; align-items: flex-start; margin: 0 auto; padding-bottom:10px;">
+
+                    <div class="flex-book-item" style="/*background-color:lightcoral*/; display:flex; top: 0; align-self: flex-start; width: 250px; height: auto; padding-bottom: 0px"><a href = "https://www.amazon.com/Fishers-Men-Flavian-Trilogy-Book/dp/103588772X/" style="display: contents"> <img src="./images/Webp-200s/PreA-fishers-front-400x600.webp" alt="Fishers of Men" loading="lazy" class="book" style="width: 250px;"> </a>
+
+                        <div class="vendorimg" style="background-color: #FF9900; border-radius: .75rem; box-sizing: border-box; /*display: flex;*/ height: 60px; width: 250px;  margin: 25px 0 0 0;">
+                            <div style="display:flex;  justify-content: center; align-items:center; padding: 0 2.5% 0% 2.5%;"> <a href = "https://www.amazon.com/Fishers-Men-Flavian-Trilogy-Book/dp/103588772X"><img src="./images/svg/amazon-generic-white-arrow.svg" loading="lazy" style="width:90%; align-self"></a></div></div>
+                           
+                            <div class="vendorimg" style="background-color: #333; border-radius: .75rem ;box-sizing: border-box; /*display: flex;*/ height: 60px; width: 250px; margin: 15px 0 0 0; /*position: relative;*/ "><div class="/*vendorimg*/" style="display:flex;  text-align: center; align-self:center; padding: 0 2.5% 0% 2.5%;"> <a href = "https://www.austinmacauley.com/book/fishers-of-men"><img src="./images/svg/austin-mac-white-letters.svg" loading="lazy" style="width: 90%; align-self:center;"></a></div></div>
+
+
+                        </div>
+
+                    <div class="flex-book-item,  flex-book-item-text" style="/*background-color:lightseagreen;*/ padding: 0 0 0 40px; height: auto; min-width: 250px; width: calc(90vw - 250px);">
+ 
+                        
+                        <p style="margin-top: 0; line-height: 150%;">The second instalment in the dramatic new series... Joshua, Maria, and Linus Flavian now determine their destinies. From the Nazarenes and the Essenes to the burgeoning fishing industry on the Sea of Galilee, Joshua and his band of followers are led from obscurity to the portals of the Roman Prefect in a movement poised to change the world. Maria of Magdala becomes a part of this movement and is left with an awesome responsibility. Linus Flavian pits Roman pride against a Galilean past. FISHERS OF MEN provides a fascinating commentary on the origins of Christianity that is both challenging, and yet plausible, incorporating traditional beliefs, fictitious thoughts, and new controversial interpretations. With vivid prose and compelling characters, FISHERS OF MEN offers a captivating glimpse into the first century and Roman worlds.</p>
+
+                        <p style="margin: 3rem 0 2rem 0; line-height: 150%; ;"><blockquote style="font-size: 2rem"><i>‘A provocative new picture of the historical Jesus’</i></blockquote> <span style="display: block; text-align:right;">&mdash; Kirkus Discoveries</span></p>
+
+
+                        <p style="margin-top: 5rem; line-height: 150%;"><blockquote style="font-size: 2rem"><i>‘Peter Longley’s unique interpretations of the life of the Messiah, along with his interesting and plausible explanations of miraculous events and his indications that Maria of Magdala played a vital role in the ministry of God’s son , make for a fascinating and intriguing story and increases anticipation for the third and final book in the series.’ </i></blockquote> <span style="display: block; text-align:right;">&mdash; San Francisco and <br>Sacramento Book Reviews</span></p>
+
+
+                        <p style="margin-top: 3rem; line-height: 150%;"><blockquote style="font-size: 2rem"><i>‘From the descriptive nature, it is obvious that this author has personal knowledge of these important first-century sites, giving authenticity to his work often missing in Biblical
+                        narratives.’</i></blockquote><span style="display: block; text-align:right;">&mdash; Beecher,<br>Springfield, Missouri</span></p>
+
+
+
+
+                        
+                    
+
+                    </div><!-- div level now = 3-->
+
+                </div><!--flex container close--><!-- div level now = 2-->
+
+            </div><!--wrapper close--><!-- div level now = 1-->
+        </div><!--fishers close--><!-- div level now = 0-->
+
+    </section> <!--End of "section-wrapper"-->
+
+        <div class="spacer-div" style = "height: 500px; position: relative;"></div>
+
+
+        
+
+
+
+
+
+        <section class="section-wrapper">
+
+            <div id="destiny" data-div-level="1" class="section, book-section-spacer "></div>
+    
+
+        <div data-div-level="1">
+            <div data-div-level="2" id="wrapper" class="w3-man w3-content /*w3-padding*/" style="background-color: white; max-width: /*173*/ 220rem; display: flex; justify-content: center; width:95%;  text-align:center; height:auto; overflow: auto">
+
+
+                <div data-div-level="3"  class="flex-book-container" style="display:flex; flex-direction: row; align-content: start; /*background-color:blue;*/ flex-wrap: wrap; height:auto; overflow: auto; justify-content: center; align-items: flex-start; margin: 0 auto; padding-bottom:10px;">
+
+                    <div class="flex-book-item" style="/*background-color:lightcoral*/; display:flex; top: 0; align-self: flex-start; width: 250px; height: auto; padding-bottom: 0px"><a href = "https://www.amazon.com/Star-Destiny-Flavian-Trilogy-Book-ebook/dp/B0DDMVBPVY/" style="display: contents"><img src="./images/Webp-200s/A-Destiny-400x600.webp" alt="Star of Destiny"; loading="lazy" class="book" style="width: 250px";></a> 
+
+                        <div class="vendorimg" style="background-color: #FF9900; border-radius: .75rem; box-sizing: border-box; /*display: flex;*/ height: 60px; width: 250px;  margin: 25px 0 0 0;">
+                            <div style="display:flex;  justify-content: center; align-items:center; padding: 0 2.5% 0% 2.5%;"> <a href = "https://www.amazon.com/Star-Destiny-Flavian-Trilogy-Book-ebook/dp/B0DDMVBPVY"><img src="./images/svg/amazon-generic-white-arrow.svg" loading="lazy" style="width:90%; align-self"></a></div></div>
+                           
+                            <div class="vendorimg" style="background-color: #333; border-radius: .75rem ;box-sizing: border-box; /*display: flex;*/ height: 60px; width: 250px; margin: 15px 0 0 0; /*position: relative;*/ "><div class="/*vendorimg*/" style="display:flex;  text-align: center; align-self:center; padding: 0 2.5% 0% 2.5%;"> <a href = "https://www.austinmacauley.com/book/star-of-destiny"><img src="./images/svg/austin-mac-white-letters.svg" loading="lazy" style="width: 90%; align-self:center;"></a></div></div>
+
+
+                        </div>
+
+                    <div class="flex-book-item,  flex-book-item-text" style="/*background-color:lightseagreen;*/ padding: 0 0 0 40px; height: auto; min-width: 250px; width: calc(90vw - 250px);">
+ 
+                        
+                        
+
+                        <p style="margin-top: 0; line-height: 150%;">Flavius Septimus, the commander of the Sepphoris garrison in Galilee, harbors a dark secret that casts a shadow over the lives of his son, Linus Flavian, and Maria of Magdala. In these novels, Linus, Maria, and Joshua, the Biblical Jesus, are born under a mysterious star in a world steeped in superstition and intrigue. As the Jewish Temple hierarchy, the Herodian dynasty, and the Romans vie for power in tumultuous first-century Judea, their adolescent lives unfold, intertwined with personal destinies shaped by the beliefs surrounding their births under that enigmatic star.</p>
+
+                        
+                        <p style="margin-top: 3rem; line-height: 150%;"><blockquote style="font-size: 2rem"><i>‘Longley's feeling for the Roman and Jewish point of view is superb.’</i></blockquote><span style="display: block; text-align:right;">&mdash; Dorothy Thompson, Scotland</span></p>
+
+
+                        <p style="margin: 3rem 0 2rem 0; line-height: 150%; ;"><blockquote style="font-size: 2rem"><i>‘In providing historical, economic, and religious details, Peter Longley builds a bridge between spiritual divinity and traditional Christianity. Finally, it's a relief to find a theologian that makes sense of the Bible and its many translations!’</i></blockquote> <span style="display: block; text-align:right;">&mdash; Jeanette Parker, USA</span></p>
+
+
+                        <p style="margin-top: 5rem; line-height: 150%;"><blockquote style="font-size: 2rem"><i>‘Longley blends a fantastic mixture of historical and fictional figures and events to narrate the early lives of Joshua, (also known as Jesus of Nazareth,) Maria, (also known as Mary Magdalene,) and Linus Flavius, (the fictitious son of a high-ranking Roman official.) Using simple, effective prose, Longley tells an engaging tale that offers plausible explanations of those well-known stories of the miraculous, such as the virgin birth and the turning of water into wine. Longley tells an intriguing story in a setting that is both familiar and unfamiliar at the same time.’ </i></blockquote> <span style="display: block; text-align:right;">&mdash; San Francisco and <br>Sacramento Book Reviews</span></p>
+
+
+                        
+                        <p style="margin: 3rem 0 2rem 0; line-height: 150%; ;"><blockquote style="font-size: 2rem"><i>‘I very much enjoy your interpretation of the life of Jesus and feel it is much more logical than the accepted version. I have always had a fascination with Mary Magdalene and her life as well. I found this book to be very interesting. Nothing I have read on Mary Magdalene has had the same sort of story line including that of her mother.’</i></blockquote> <span style="display: block; text-align:right;">&mdash; Cheryl Huffman, USA</span></p>
+
+
+
+
+                        
+                    
+
+                    </div><!-- div level now = 3-->
+
+                </div><!--flex container close--><!-- div level now = 2-->
+
+            </div><!--wrapper close--><!-- div level now = 1-->
+        </div><!--fishers close--><!-- div level now = 0-->
+
+    </section> <!--End of "section-wrapper"-->
+
+        <div class="spacer-div" style = "height: 500px; position: relative;"></div>
+
+
+
+
+
+
+
+        <!--Bottom of Author Section and individual book Flexbox -->
+
+
+
+
+
+
+            <!-- Footer -->
+            <!--footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+        <li class="w3-padding-16">
+          <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Lorem</span><br>
+          <span>Sed mattis nunc</span>
+        </li>
+        <li class="w3-padding-16">
+          <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
+          <span class="w3-large">Ipsum</span><br>
+          <span>Praes tinci sed</span>
+        </li> 
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
+      </p>
+    </div>
+  </footer-->
+        <!--div><div level now = minus 1-->
+
+        <!-- End page content -->
+
+        
+
+
+<!-- **** MENU SIDEBAR OPEN/CLOSE SCRIPT **** -->
+
+
+        <script type="text/javascript">
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+
+<!-- **** END OF MENU SIDEBAR OPEN/CLOSE SCRIPT **** -->
+
+
+
+<!-- **** SCROLLING SCRIPT **** -->
+
+        <script defer>
+
+            // raf shim http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+window.requestAnimFrame = (function() {
+  return window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    function(callback) {
+      window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
+// main function
+function scrollToElement(element, speed, easing) {
+  
+  var scrollTargetY = element.offsetTop;
+  //var scrollTargetY = element.offset().top;
+  // scrollTargetY: the target scrollY property of the window
+  // speed: time in pixels per second
+  // easing: easing equation to use
+
+  var scrollY = window.scrollY,
+    scrollTargetY = scrollTargetY || 0,
+    speed = speed || 2000,
+    easing = easing || 'easeInOutQuint',
+    currentTime = 0;
+
+  // min time .1, max time .8 seconds
+  var time = Math.max(0.3, Math.min(Math.abs(scrollY - scrollTargetY) / speed, 1.0));
+
+  // easing equations from https://github.com/danro/easing-js/blob/master/easing.js
+  var PI_D2 = Math.PI / 2,
+    easingEquations = {
+      easeOutSine: function(pos) {
+        return Math.sin(pos * (Math.PI / 2));
+      },
+      easeInOutSine: function(pos) {
+        return (-0.5 * (Math.cos(Math.PI * pos) - 1));
+      },
+      easeInOutQuint: function(pos) {
+        if ((pos /= 0.5) < 1) {
+          return 0.5 * Math.pow(pos, 5);
+        }
+        return 0.5 * (Math.pow((pos - 2), 5) + 2);
+      }
+    };
+
+  // add animation loop
+  function tick() {
+    currentTime += 1 / 60;
+
+    var p = currentTime / time;
+    var t = easingEquations[easing](p);
+
+    if (p < 1) {
+      requestAnimFrame(tick);
+
+      window.scrollTo(0, scrollY + ((scrollTargetY - scrollY) * t));
+    } else {
+      console.log('scroll done');
+      window.scrollTo(0, scrollTargetY);
+    }
+  }
+
+  // call it once to get started
+  tick();
+}
+
+
+// scroll it!
+var scrollLinks = document.querySelectorAll('.scroll-link');
+
+for (var i = 0; i < scrollLinks.length; i++) {
+  scrollLinks[i].addEventListener('click', function( evt ) {
+    var id = evt.target.getAttribute('data-element-id');
+    var element = document.getElementById( id );
+    scrollToElement( element, 1500, 'easeInOutQuint');
+  });
+}
+
+
+        </script>
+<!-- **** END OF SCROLLING SCRIPT **** -->
+
+
+
+
+<!-- **** ROT EMAIL OBF SCRIPT **** -->
+
+        <script defer>
+            document.getElementById("obf").innerHTML = '<n uers="znvygb:cybatyrl@ubgznvy.pbz?fhowrpg=Radhvel sebz Jrofvgr" gnetrg="_oynax">Rznvy</n>'.replace(/[a-zA-Z]/g, function (c) {
+                return String.fromCharCode((c <= "Z" ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
+            });
+        </script>
+    </body>
+</html>
+<!-- **** END OF ROT EMAIL OBF SCRIPT **** -->
+
+
+<!-- **** BASE64 EMAIL OBF SCRIPT **** -->
+
+<script type="text/javascript" defer>
+  function decodeBase64(encoded) {
+    return decodeURIComponent(atob(encoded).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+  }
+  
+  let encoded = "cGxvbmdsZXlAaG90bWFpbC5jb20=";
+  let email = decodeBase64(encoded);
+  
+  document.getElementById("zzz").innerHTML = ('<a href="mailto:' + email + '"> <?xml version="1.0" encoding="iso-8859-1"?><svg fill="#000000" height="100%" width="100%" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.294 75.294" xml:space="preserve"><g><path d="M66.097,12.089h-56.9C4.126,12.089,0,16.215,0,21.286v32.722c0,5.071,4.126,9.197,9.197,9.197h56.9       c5.071,0,9.197-4.126,9.197-9.197V21.287C75.295,16.215,71.169,12.089,66.097,12.089z M61.603,18.089L37.647,33.523L13.691,18.089       H61.603z M66.097,57.206h-56.9C7.434,57.206,6,55.771,6,54.009V21.457l29.796,19.16c0.04,0.025,0.083,0.042,0.124,0.065     c0.043,0.024,0.087,0.047,0.131,0.069c0.231,0.119,0.469,0.215,0.712,0.278c0.025,0.007,0.05,0.01,0.075,0.016      c0.267,0.063,0.537,0.102,0.807,0.102c0.001,0,0.002,0,0.002,0c0.002,0,0.003,0,0.004,0c0.27,0,0.54-0.038,0.807-0.102      c0.025-0.006,0.05-0.009,0.075-0.016c0.243-0.063,0.48-0.159,0.712-0.278c0.044-0.022,0.088-0.045,0.131-0.069      c0.041-0.023,0.084-0.04,0.124-0.065l29.796-19.16v32.551C69.295,55.771,67.86,57.206,66.097,57.206z"/></g></svg></a> ');
+</script>
+
+<!-- **** END OF BASE64 EMAIL OBF SCRIPT **** -->
